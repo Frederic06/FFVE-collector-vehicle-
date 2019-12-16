@@ -12,14 +12,16 @@ final class EventCoordinator {
     
     // MARK: - Properties
     
+    private weak var delegate: CoordinatorsDelegate?
     private let presenter: UINavigationController
     private let screens: Screens
     
     // MARK: - Initializer
     
-    init(presenter: UINavigationController, screens: Screens) {
+    init(presenter: UINavigationController, screens: Screens, delegate: CoordinatorsDelegate) {
         self.presenter = presenter
         self.screens = screens
+        self.delegate = delegate
     }
     
     // MARK: - Public methods
@@ -28,16 +30,35 @@ final class EventCoordinator {
         showEvents()
     }
     
-    func showEvents() {
-        let viewController = screens.createEventViewController()
+    // MARK: - Private methods
+    
+    private func showEvents() {
+        let viewController = screens.createEventViewController(delegate: self)
         presenter.viewControllers = [viewController]
     }
     
-    func showDetail() {
+    private func showDetail(event: EventItem) {
+        let viewController = screens.createEventDetailViewController(delegate: self, event: event)
+        presenter.pushViewController(viewController, animated: true)
     }
     
-    // MARK: - Private methods
+    private func showAlert(type: AlertType) {
+        guard let alert = screens.createAlert(for: type, completion: {}) else {return}
+        
+        presenter.visibleViewController?.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension EventCoordinator: EventDelegate {
+    func didPressInfo() {
+        delegate?.createFFVEInfo(function: .events)
+    }
     
-    private func showAlert() {
+    func seeDetail(event: EventItem) {
+        showDetail(event: event)
+    }
+    
+    func alert(type: AlertType) {
+        showAlert(type: type)
     }
 }
