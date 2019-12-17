@@ -20,5 +20,7 @@
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>L&apos;application a besoin de votre autorisation d&apos;accès au calendrier ⚠️</string>
 </dict>
 </plist>

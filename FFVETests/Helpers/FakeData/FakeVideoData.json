@@ -1,0 +1,46 @@
+
+{
+    "kind": "youtube#searchListResponse",
+    "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/CWzHLHM9O8eX-MNohPbxjNY_7Sw\"",
+    "nextPageToken": "CBQQAA",
+    "regionCode": "FR",
+    "pageInfo": {
+        "totalResults": 121,
+        "resultsPerPage": 20
+    },
+    "items": [
+        {
+            "kind": "youtube#searchResult",
+            "etag": "\"p4VTdlkQv3HQeTEaXgvLePAydmU/6dYA7XFV0uKmo22-fOLtL8ukHkM\"",
+            "id": {
+                "kind": "youtube#video",
+                "videoId": "vTuH4lhbnNs"
+            },
+            "snippet": {
+                "publishedAt": "2019-11-25T06:37:33.000Z",
+                "channelId": "UCPapD6dD5H64yRFzv20K8lQ",
+                "title": "Lancement opération Lieux de mémoire automobile par la FFVE",
+                "description": "A l'occasion du salon Epoqu'Auto à Lyon le 9 novembre, Jean Louis Blanc, Président de la FFVE a lancé l'opération Lieux de mémoire de l'automobile en ...",
+                "thumbnails": {
+                    "default": {
+                        "url": "https://i.ytimg.com/vi/vTuH4lhbnNs/default.jpg",
+                        "width": 120,
+                        "height": 90
+                    },
+                    "medium": {
+                        "url": "https://i.ytimg.com/vi/vTuH4lhbnNs/mqdefault.jpg",
+                        "width": 320,
+                        "height": 180
+                    },
+                    "high": {
+                        "url": "https://i.ytimg.com/vi/vTuH4lhbnNs/hqdefault.jpg",
+                        "width": 480,
+                        "height": 360
+                    }
+                },
+                "channelTitle": "FFVE",
+                "liveBroadcastContent": "none"
+            }
+        }
+    ]
+}
