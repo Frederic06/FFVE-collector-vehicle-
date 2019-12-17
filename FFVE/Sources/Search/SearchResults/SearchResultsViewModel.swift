@@ -134,7 +134,7 @@ final class SearchResultsViewModel {
                 break
             }
         }
-        guard result != [] else {activityIndicatorIsHidden?(true); delegate?.alertNoMember() ; return nil}
+        guard result != [] else {activityIndicatorIsHidden?(true); delegate?.alert(type: .noMember) ; return nil}
         return result
     }
 }

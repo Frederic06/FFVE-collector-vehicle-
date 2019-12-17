@@ -56,5 +56,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Nous avons besoin de votre autorisation pour ajouter la fiche de l&apos;adhérent à vos photos.</string>
 </dict>
 </plist>

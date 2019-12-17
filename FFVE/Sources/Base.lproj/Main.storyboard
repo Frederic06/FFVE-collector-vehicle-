@@ -358,24 +358,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJi-o1-Z3d">
-                                <rect key="frame" x="164.5" y="597" width="46" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CC7-tV-UFc"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtc-ji-4lR">
-                                <rect key="frame" x="246.5" y="597" width="46" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtU-q8-SxS">
-                                <rect key="frame" x="82.5" y="597" width="46" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VEP-KJ-KIC">
                                 <rect key="frame" x="0.0" y="333.5" width="375" height="333.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -485,32 +467,19 @@
                         <constraints>
                             <constraint firstItem="VEP-KJ-KIC" firstAttribute="top" secondItem="XhV-fm-moD" secondAttribute="bottom" id="0Ml-kR-DCu"/>
                             <constraint firstAttribute="trailing" secondItem="VEP-KJ-KIC" secondAttribute="trailing" id="0fH-pB-WQH"/>
-                            <constraint firstItem="cJi-o1-Z3d" firstAttribute="baseline" secondItem="jtc-ji-4lR" secondAttribute="firstBaseline" id="4Yl-YB-goT"/>
                             <constraint firstItem="g4I-4F-CEc" firstAttribute="top" secondItem="wF4-OL-YJL" secondAttribute="top" constant="30" id="6bU-eJ-eXZ"/>
-                            <constraint firstItem="cJi-o1-Z3d" firstAttribute="top" secondItem="JtU-q8-SxS" secondAttribute="top" id="9zk-Eo-5DY"/>
                             <constraint firstItem="wF4-OL-YJL" firstAttribute="trailing" secondItem="g4I-4F-CEc" secondAttribute="trailing" constant="15" id="AvO-W6-Q8f"/>
                             <constraint firstItem="XhV-fm-moD" firstAttribute="leading" secondItem="wF4-OL-YJL" secondAttribute="leading" constant="10" id="CgJ-bk-N63"/>
                             <constraint firstItem="VEP-KJ-KIC" firstAttribute="leading" secondItem="gBU-ok-SZY" secondAttribute="leading" id="Ht8-aO-nO3"/>
-                            <constraint firstItem="cJi-o1-Z3d" firstAttribute="top" secondItem="jtc-ji-4lR" secondAttribute="top" id="OMA-dl-RVI"/>
-                            <constraint firstItem="jtc-ji-4lR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cJi-o1-Z3d" secondAttribute="trailing" constant="8" symbolic="YES" id="UHT-Fq-kVV"/>
-                            <constraint firstItem="cJi-o1-Z3d" firstAttribute="baseline" secondItem="JtU-q8-SxS" secondAttribute="firstBaseline" id="b1X-DP-sUh"/>
                             <constraint firstItem="VEP-KJ-KIC" firstAttribute="height" secondItem="wF4-OL-YJL" secondAttribute="height" multiplier="0.5" id="bzz-5x-nLj"/>
                             <constraint firstItem="wF4-OL-YJL" firstAttribute="trailing" secondItem="XhV-fm-moD" secondAttribute="trailing" constant="10" id="c1C-eT-UNq"/>
-                            <constraint firstItem="cJi-o1-Z3d" firstAttribute="centerX" secondItem="gBU-ok-SZY" secondAttribute="centerX" id="fO9-u1-brp"/>
                             <constraint firstItem="VEP-KJ-KIC" firstAttribute="bottom" secondItem="wF4-OL-YJL" secondAttribute="bottom" id="gwJ-z5-qPw"/>
-                            <constraint firstItem="wF4-OL-YJL" firstAttribute="trailing" secondItem="jtc-ji-4lR" secondAttribute="trailing" constant="82.5" id="lnB-MI-apv"/>
-                            <constraint firstItem="JtU-q8-SxS" firstAttribute="leading" secondItem="wF4-OL-YJL" secondAttribute="leading" constant="82.5" id="rHl-KA-oqR"/>
-                            <constraint firstItem="cJi-o1-Z3d" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JtU-q8-SxS" secondAttribute="trailing" constant="8" symbolic="YES" id="u3S-QQ-qYH"/>
                             <constraint firstItem="XhV-fm-moD" firstAttribute="top" secondItem="wF4-OL-YJL" secondAttribute="top" constant="50" id="w8e-wa-NSy"/>
-                            <constraint firstAttribute="bottom" secondItem="cJi-o1-Z3d" secondAttribute="bottom" constant="20" symbolic="YES" id="yAs-Bi-Wmw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wF4-OL-YJL"/>
                     </view>
                     <connections>
-                        <outlet property="centerButton" destination="cJi-o1-Z3d" id="azY-Vl-C7m"/>
                         <outlet property="functionDescription" destination="XhV-fm-moD" id="0C3-1D-RTh"/>
-                        <outlet property="leftButton" destination="JtU-q8-SxS" id="2E8-66-mRs"/>
-                        <outlet property="rightButton" destination="jtc-ji-4lR" id="ysF-ll-glS"/>
                         <outlet property="tableChoice" destination="VEP-KJ-KIC" id="SIe-1D-pyZ"/>
                     </connections>
                 </viewController>

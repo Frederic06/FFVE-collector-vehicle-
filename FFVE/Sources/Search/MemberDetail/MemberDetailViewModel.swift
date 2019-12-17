@@ -30,7 +30,6 @@ final class MemberDetailViewModel {
     var presidentLabelText: ((String) -> Void)?
     var coordinatesLabelText: ((String) -> Void)?
     var adressLabelText: ((String) -> Void)?
-    
     var memberItem: ((MemberItem) -> Void)?
     
     // MARK: - Public methods(Inputs)
@@ -52,5 +51,9 @@ final class MemberDetailViewModel {
     
     func didPressInfoLogo() {
         delegate?.didPressFFVELogo()
+    }
+    
+    func didShare(objects: [AnyObject]) {
+        delegate?.didShare(objects: objects)
     }
 }

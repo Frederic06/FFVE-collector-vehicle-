@@ -67,13 +67,13 @@ final class TableChoiceDataSource: NSObject, UITableViewDelegate, UITableViewDat
                 label.text = "Suivre la fédération"
             }
             if let button = cell.viewWithTag(2) as? UIButton {
-                button.addTarget(self, action: #selector(flickrClicked(sender:)), for: .touchUpInside)
+                button.addTarget(self, action: #selector(videoClicked(sender:)), for: .touchUpInside)
             }
             if let button = cell.viewWithTag(3) as? UIButton {
                 button.addTarget(self, action: #selector(globeClicked(sender:)), for: .touchUpInside)
             }
             if let button = cell.viewWithTag(4) as? UIButton {
-                button.addTarget(self, action: #selector(youtubeClicked(sender:)), for: .touchUpInside)
+                button.addTarget(self, action: #selector(imageClicked(sender:)), for: .touchUpInside)
             }
             return cell
             
@@ -98,15 +98,15 @@ final class TableChoiceDataSource: NSObject, UITableViewDelegate, UITableViewDat
         selectedButton?(button)
     }
     
-    @objc fileprivate func flickrClicked(sender: UIButton) {
-        print("flickrClicked")
+    @objc fileprivate func videoClicked(sender: UIButton) {
+        selectedButton?(.video)
     }
     
     @objc fileprivate func globeClicked(sender: UIButton) {
-        print("globeClicked")
+        selectedButton?(.globe)
     }
     
-    @objc fileprivate func youtubeClicked(sender: UIButton) {
-        print("youtubeClicked")
+    @objc fileprivate func imageClicked(sender: UIButton) {
+        selectedButton?(.image)
     }
 }

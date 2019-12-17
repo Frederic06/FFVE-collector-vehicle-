@@ -28,7 +28,7 @@ final class TableResultDataSource: NSObject, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath) as! MemberCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "memberCell", for: indexPath) as? MemberCell else {return UITableViewCell()}
         guard let member = members?[indexPath.row] else {return cell}
         cell.updateCell(with: member)
         return cell

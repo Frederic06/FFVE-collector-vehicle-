@@ -48,7 +48,16 @@ final class ResearchCoordinator{
         presenter.pushViewController(viewController, animated: true)
     }
     
+    private func showSearchBar() {
+        let viewController = screens.createSearchBarVC(delegate: self)
+        presenter.viewControllers = [viewController]
+    }
+    
     private func showAlert(type: AlertType) {
+        
+        if type == .noMember {
+            
+        }
         guard let alert = screens.createAlert(for: type, completion: {
             self.backToStart()
         }) else {return}
@@ -60,19 +69,22 @@ final class ResearchCoordinator{
         delegate.createFFVEInfo(function: .search)
     }
     
-    private func backToStart() {
-        print("backToStart")
-        start()
+    private func backToStart() { start()
     }
 }
 
 // MARK: - Extensions
 
 extension ResearchCoordinator: SearchDelegate{
-    func alertNoMember() {
-        showAlert(type: .noMember)
+    func didShare(objects: [AnyObject]) {
+        let activityViewController = UIActivityViewController(activityItems: objects , applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = presenter.view
+        presenter.visibleViewController?.present(activityViewController, animated: true, completion: nil)
     }
     
+    func alert(type: AlertType) {
+        showAlert(type: type)
+    }
     
     func seeMembers(filters: FiltersItem) {
         showMembers(filters: filters)
@@ -104,8 +116,9 @@ extension ResearchCoordinator: SearchDelegate{
     }
     
     func didTapOnSearchBar() {
-        let viewController = screens.createSearchBarVC(delegate: self)
-        presenter.viewControllers = [viewController]
+        presenter.visibleViewController?.dismiss(animated: true, completion: {
+            self.showSearchBar()
+        })
     }
     
     func seeMemberDetail(member: MemberItem) {
@@ -113,17 +126,8 @@ extension ResearchCoordinator: SearchDelegate{
         presenter.pushViewController(viewController, animated: true)
     }
     
-    func alert(type: AlertType) {
-        showAlert(type: type)
-    }
-    
     func dismissVC() {
-        delegate.dismissed()
-//        presenter.popToRootViewController(animated: true)
-//        presenter.popViewController(animated: true)
-        presenter.visibleViewController?.dismiss(animated: true, completion: nil)
-//        presenter.presentingViewController?.dismiss(animated: true, completion: nil)
-        showSearch()
+        start()
     }
     
     func didPressFFVELogo() {

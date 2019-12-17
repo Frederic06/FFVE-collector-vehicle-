@@ -9,7 +9,7 @@
 import UIKit
 
 class SearchBarViewController: UIViewController {
-
+    
     @IBOutlet weak var cityMemberTable: UITableView!
     
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,7 +27,7 @@ class SearchBarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
-
+        
         bind(to: viewModel)
         bind(to: cityMemberDataSource)
         cityMemberTable.delegate = cityMemberDataSource
@@ -37,7 +37,7 @@ class SearchBarViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
+        super.viewWillAppear(animated)
         viewModel.viewDidAppear()
     }
     
@@ -92,7 +92,7 @@ class SearchBarViewController: UIViewController {
         
         navigationItem.searchController = searchController
         DispatchQueue.main.async {
-        self.searchController.searchBar.becomeFirstResponder()
+            self.searchController.searchBar.becomeFirstResponder()
         }
     }
     

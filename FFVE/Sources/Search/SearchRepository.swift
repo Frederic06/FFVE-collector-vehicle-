@@ -28,10 +28,10 @@ final class SearchRepository: SearchRepositoryType {
     }
     
     // MARK - Public methods
-
+    
     func getMembers(completion: @escaping (Result<[MemberItem]>) -> Void) {
         guard let url = route.getURL(request: .members) else {return}
-            
+        
         network.request(type: Member.self, url: url) { (result) in
             switch result {
             case .success(value: let memberItem):

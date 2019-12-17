@@ -18,7 +18,7 @@ protocol SearchDelegate: class{
     func alert(type: AlertType)
     func dismissVC()
     func didPressFFVELogo()
-    func alertNoMember()
+    func didShare(objects: [AnyObject])
 }
 
 final class HomeSearchViewModel {
@@ -37,13 +37,13 @@ final class HomeSearchViewModel {
         self.firstLabelText?("\(self.memberTypeChoice?.rawValue ?? "")")
         self.firstLabelHidden?(false)
         switch memberTypeChoice {
-            case .auto( _):
+        case .auto( _):
             currentFilter = .brand
             secondButtonText?("     2 -> Choisissez une marque")
-            case .professional( _):
+        case .professional( _):
             currentFilter = .speciality
             secondButtonText?("     2 -> Choisissez une spécialité")
-            default:
+        default:
             currentFilter = .department
             secondButtonText?("     2 -> Choisissez un département")
         }
@@ -283,23 +283,11 @@ final class HomeSearchViewModel {
     private func presentFilterAlert(from button: Button, for filter: Filter, dataSource: DepartmentPickerDataSource) {
         
         delegate?.alert(for: filter, dataSource: dataSource, didPressOk: { (response) in
-            
-            switch response{
-                
-            case true:
-                var item: String
-                switch self.provisoryItem {
-                case nil:
-                    item = ""
-                default:
-                    item = self.provisoryItem!
-                }
+            if response == true {
+                let item = self.provisoryItem ?? ""
                 self.updateUI(for: filter, with: item, with: button)
                 self.keepChoice(from: filter, with: item)
                 self.secondLabelHidden?(false)
-                
-            default:
-                break
             }
             self.provisoryItem = nil
         })

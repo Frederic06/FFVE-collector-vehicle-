@@ -65,7 +65,6 @@ final class MemberDetailViewController: UIViewController {
         viewModel.adressLabelText = { [weak self] text in
             self?.adress.text = text
         }
-
     }
     
     private func setUI() {
@@ -91,11 +90,6 @@ final class MemberDetailViewController: UIViewController {
         UIGraphicsEndImageContext()
         let imagesToShare: [AnyObject] = [image]
 
-//        viewModel.didShare(objects: imagesToShare)
-
-
-        let activityViewController = UIActivityViewController(activityItems: imagesToShare , applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        present(activityViewController, animated: true, completion: nil)
+        viewModel.didShare(objects: imagesToShare)
     }
 }

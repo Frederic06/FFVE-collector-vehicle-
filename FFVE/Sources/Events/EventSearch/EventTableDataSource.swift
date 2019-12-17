@@ -71,14 +71,14 @@ extension EventTableDataSource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard headers != [] else {return nil}
-        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 35.0)! ]
+        let myAttribute = [ NSAttributedString.Key.font: UIFont(name: "Avenir Next", size: 35.0) ]
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 150))
         view.backgroundColor = .white
         let label = UILabel(frame: CGRect(x: 15, y: -25, width: tableView.bounds.width - 30, height: 100))
         label.font = UIFont.boldSystemFont(ofSize: 35)
         label.textColor = #colorLiteral(red: 0.377325654, green: 0.336207211, blue: 0.7377319932, alpha: 1)
         label.textAlignment = .left
-        let myAttrString = NSAttributedString(string: headers[section], attributes: myAttribute)
+        let myAttrString = NSAttributedString(string: headers[section], attributes: myAttribute as [NSAttributedString.Key : Any])
         label.attributedText = myAttrString
         
         view.addSubview(label)

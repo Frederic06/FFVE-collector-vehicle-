@@ -25,7 +25,6 @@ final class Route {
     
     private let agendaUrlString = "https://openagenda.com/agendas/43187170/events.json"
     
-    private let youtupeAPIKey = "AIzaSyAvK39faJYtd1pM6sEbKG3ahRCuEwBYaIA"
     private let youtubeRequestString = "https://www.googleapis.com/youtube/v3/search?key=AIzaSyAvK39faJYtd1pM6sEbKG3ahRCuEwBYaIA&channelId=UCPapD6dD5H64yRFzv20K8lQ&part=snippet&maxResults=20&order=date&type=video"
     // 20 vidéos
 }

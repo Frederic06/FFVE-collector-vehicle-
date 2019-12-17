@@ -49,8 +49,6 @@ final class MapDataSource: NSObject, MKMapViewDelegate {
     }
     
     func constructItems(with members: [MemberItem]) {
-
-        
         self.items = members.compactMap {
             guard
                 let latitudeStr = $0.latitude,
@@ -64,14 +62,10 @@ final class MapDataSource: NSObject, MKMapViewDelegate {
                                                         title: $0.name,
                                                         subtitle: $0.atype)
         }
-        
-        switch zoom {
-        case .city:
+        if zoom == .city {
             getCityCenter(adress: members[0].city)
-        case .department:
+        } else if zoom == .department {
             getCenterCoordinates(items: self.items)
-        default:
-            break
         }
     }
     

@@ -14,12 +14,6 @@ final class FFVEInfoViewController: UIViewController {
     
     @IBOutlet weak var tableChoice: UITableView!
     
-    @IBOutlet weak var leftButton: UIButton!
-    
-    @IBOutlet weak var centerButton: UIButton!
-    
-    @IBOutlet weak var rightButton: UIButton!
-    
     private var tableChoiceDataSource = TableChoiceDataSource()
     // MARK: - Properties
     

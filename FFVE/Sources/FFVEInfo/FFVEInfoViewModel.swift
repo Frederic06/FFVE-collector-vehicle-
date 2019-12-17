@@ -13,7 +13,7 @@ enum FunctionCase: String {
 }
 
 enum Button: String, Equatable {
-    case history = "Histoire de la fédération", inscriptions = "Inscription", dev = "A propos du développeur"
+    case history = "Histoire de la fédération", inscriptions = "Inscription", dev = "A propos du développeur", video, globe, image
     
     static func ==(lhs: Button, rhs: Button) -> Bool {
         return lhs.rawValue == rhs.rawValue
@@ -51,7 +51,6 @@ final class FFVEInfoViewModel{
     }
     
     func didPress(button: Button) {
-        print(button.rawValue)
         switch button {
         case .history:
             openWebPage?("https://www.ffve.org/Histoire_de_la_FFVE")
@@ -59,6 +58,12 @@ final class FFVEInfoViewModel{
             openWebPage?("https://www.ffve.org/Comment_adherer_a_la_FFVE")
         case .dev:
             openWebPage?("https://frederic06.github.io/Demo/")
+        case .image:
+            openWebPage?("https://www.flickr.com/photos/146458637@N06/albums")
+        case .globe:
+            openWebPage?("https://www.ffve.org/")
+        case .video:
+            openWebPage?("https://www.youtube.com/channel/UCPapD6dD5H64yRFzv20K8lQ")
         }
     }
 }

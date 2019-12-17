@@ -40,17 +40,10 @@ extension CityMemberTableDataSource: UITableViewDataSource, UITableViewDelegate 
         
         switch section {
         case 0:
-            if cities != nil {
-                return cities!.count
-            } else {
-                return 0
-            }
+            return cities?.count ?? 0
         case 1:
-            if members != nil {
-                return members!.count
-            } else {
-                return 0
-            }
+            return members?.count ?? 0
+            
         default:
             return 0
         }

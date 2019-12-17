@@ -12,7 +12,7 @@ import MapKit
 final class SearchResultsViewController: UIViewController {
     
     // MARK: - Outlets
-
+    
     @IBOutlet weak var mapResult: MKMapView!
     
     @IBOutlet weak var tableResult: UITableView!
@@ -30,6 +30,7 @@ final class SearchResultsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUI()
         mapDataSource = MapDataSource(map: mapResult)
         mapResult.delegate = mapDataSource
@@ -40,13 +41,12 @@ final class SearchResultsViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    
         
         mapResult.isHidden = true
         bind(to: viewModel)
-        viewModel.viewDidAppear()
         bind(to: tableResultDataSource)
         bind(to: mapDataSource!)
+        viewModel.viewDidAppear()
     }
     
     //        MARK: - Private methods

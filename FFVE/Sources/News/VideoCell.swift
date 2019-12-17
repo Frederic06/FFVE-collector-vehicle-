@@ -18,7 +18,8 @@ final class VideoCell: UITableViewCell, WKNavigationDelegate {
     private var video: VideoItem? = nil {
         didSet {
             guard let item = video else {return}
-            guard let url = URL(string: item.highSnipper!) else {return}
+            guard let snipper = item.highSnipper else {return}
+            guard let url = URL(string: snipper) else {return}
             if let data = try? Data( contentsOf: url) {
                 guard let image = UIImage(data: data) else {return}
                 self.videoScreen.image = image
